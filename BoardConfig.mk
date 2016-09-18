@@ -136,9 +136,6 @@ TARGET_POWERHAL_VARIANT := qcom
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
-
 # RIL
 TARGET_RIL_VARIANT := caf
 
@@ -226,3 +223,32 @@ TARGET_USES_WCNSS_CTRL := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+
+
+# TWRP
+RECOVERY_VARIANT := twrp
+TW_NEW_ION_HEAP := true
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp/twrp.fstab
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TW_TARGET_USES_QCOM_BSP := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_INCLUDE_CRYPTO := true
+TW_FLASH_FROM_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_INPUT_BLACKLIST := "accelerometer"
+TWRP_EVENT_LOGGING := true
+
+# Include tzdata for recovery
+PRODUCT_COPY_FILES += \
+bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
