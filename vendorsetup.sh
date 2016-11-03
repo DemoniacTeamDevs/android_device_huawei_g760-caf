@@ -1,1 +1,2 @@
-add_lunch_combo cm_g760-userdebug
+add_lunch_combo slim_g760-userdebug
+add_lunch_combo slim_g760-user

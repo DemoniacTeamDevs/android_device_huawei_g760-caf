@@ -15,4 +15,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/cm.mk
+	$(LOCAL_DIR)/slim.mk
